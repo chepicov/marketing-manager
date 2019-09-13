@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: fafafa;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.pages.admin.AdminLoginController">
+   <children>
+      <AnchorPane layoutX="-3.0" prefHeight="52.0" prefWidth="707.0" style="-fx-background-color: ffffff; -fx-border-width: 1px; -fx-border-color: e6e6e6;">
+         <children>
+            <Button fx:id="backButton" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: none;" text="&lt; Назад" textFill="BLUE" underline="true" />
+         </children></AnchorPane>
+      <TextField fx:id="loginInput" layoutX="267.0" layoutY="129.0" promptText="Логин" />
+      <PasswordField fx:id="passwordInput" layoutX="267.0" layoutY="167.0" promptText="Пароль" />
+      <Button fx:id="signinButton" layoutX="267.0" layoutY="206.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="167.0" style="-fx-background-color: blue;" text="Войти" textFill="WHITE" />
+      </children>
+</AnchorPane>

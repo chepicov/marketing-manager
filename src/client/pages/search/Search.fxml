@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: fafafa;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.pages.search.SearchController">
+   <children>
+      <AnchorPane prefHeight="84.0" prefWidth="700.0" style="-fx-background-color: ffffff; -fx-border-color: ccc;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="searchField" layoutX="56.0" layoutY="29.0" prefHeight="27.0" prefWidth="330.0" promptText="Поиск..." AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="29.0" />
+            <Button fx:id="searchButton" layoutX="400.0" layoutY="29.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="96.0" text="Поиск" AnchorPane.topAnchor="29.0" />
+            <Button fx:id="exit" layoutX="580.0" layoutY="29.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Выйти" textFill="WHITE" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <ListView fx:id="adsList" layoutX="55.0" layoutY="83.0" prefHeight="317.0" prefWidth="590.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="55.0" />
+   </children>
+</AnchorPane>
