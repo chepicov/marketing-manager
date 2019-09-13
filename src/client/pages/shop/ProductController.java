@@ -2,7 +2,10 @@ package client.pages.shop;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
+import client.Client;
+import client.Main;
 import client.helpers.PageHelper;
 import entities.Product;
 import javafx.fxml.FXML;
@@ -41,9 +44,15 @@ public class ProductController {
 
     @FXML
     void initialize() {
-        Product product = new Product("1", "product", "category", 1.2, "");
+        String productName = Main.getActiveProduct();
+        String message = "getProductByName;" + productName;
+        String answer = Main.getClient().sendMessage(message);
+        System.out.println(answer);
+        String tableData = answer;
+        Product product = getProduct(tableData);
+        Main.setActiveCategory(product.getCategory());
         productLabel.setText(product.getName());
-        descBlock.setText(product.getDesc());
+        descBlock.setText(product.getDescription());
         priceLabel.setText(product.getPrice() + " BYN");
         productNameLabel.setText(product.getName());
         backButton.setOnAction(event -> {
@@ -51,13 +60,33 @@ public class ProductController {
             PageHelper.onPageChange(getClass().getResource("Products.fxml"));
         });
         buyButton.setOnAction(event -> {
-            buyButton.getScene().getWindow().hide();
-            // add order
-            PageHelper.onPageChange(getClass().getResource("Login.fxml"));
+            if (Main.getLogin() == null || Main.getLogin().equals("")) {
+                buyButton.getScene().getWindow().hide();
+                PageHelper.onPageChange(getClass().getResource("Login.fxml"));
+                return;
+            }
+            Client client = Main.getClient();
+            String newMessage = "addOrder;" + product.getName() + ";" + Main.getLogin() + ";" + product.getPrice();
+            client.sendMessage(newMessage);
         });
         exit.setOnAction(event -> {
             exit.getScene().getWindow().hide();
             PageHelper.onPageChange(getClass().getResource("../Menu.fxml"));
         });
+    }
+
+    private Product getProduct(String tableData) {
+        String[] data = tableData.split(Pattern.quote(";"));
+        int i = 0;
+        System.out.println("1 " + data[0]);
+        Product product = new Product();
+        product.setId(data[i++]);
+        product.setName(data[i++]);
+        product.setCategory(data[i++]);
+        product.setPrice(Double.parseDouble(data[i++]));
+        if (data.length == 5)
+            product.setDescription(data[i++]);
+
+        return product;
     }
 }

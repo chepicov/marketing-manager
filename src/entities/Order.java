@@ -2,16 +2,18 @@ package entities;
 
 public class Order {
     private String id;
-    private String productId;
-    private String userId;
+    private String product;
+    private String user;
+    private double price;
     private String status;
 
     public Order() {}
 
-    public Order(String id, String productId, String userId) {
-        this.productId = productId;
-        this.userId = userId;
+    public Order(String id, String product, String user, double price) {
+        this.product = product;
+        this.user = user;
         this.status = "active";
+        this.price = price;
         this.id = id;
     }
 
@@ -19,31 +21,39 @@ public class Order {
         return id;
     }
 
-    public String getProductId() {
-        return productId;
+    public String getProduct() {
+        return product;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUser() {
+        return user;
     }
 
     public String getStatus() {
         return status;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
     public void setId(String id) {
         this.id = id;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
+    public void setProduct(String product) {
+        this.product = product;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

@@ -5,11 +5,10 @@ public class Ads {
     private String header;
     private String text;
     private String phone;
-    private String companyName;
+    private String company;
     private double cpc;
     private int views;
     private int clicks;
-    private String status;
 
     private String id;
 
@@ -24,9 +23,8 @@ public class Ads {
         this.cpc = cpc;
         this.views = 0;
         this.clicks = 0;
-        this.status = "active";
         this.phone = phone;
-        this.companyName = "Shop No1";
+        this.company = "Shop No1";
     }
 
     @Override
@@ -39,7 +37,6 @@ public class Ads {
                 ", cpc='" + cpc + '\'' +
                 ", views='" + views + '\'' +
                 ", clicks='" + clicks + '\'' +
-                ", status='" + status + '\'' +
                 '}';
     }
 
@@ -75,16 +72,12 @@ public class Ads {
         return clicks;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
     public String getPhone() {
         return phone;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getCompany() {
+        return company;
     }
 
     public void setProduct(String product) {
@@ -111,19 +104,15 @@ public class Ads {
         this.clicks = clicks;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setCompany(String company) {
+        this.company = company;
     }
 
     public String show() {
-        return header + "\n" + text + "\n" + companyName + ". Телефон: " + phone;
+        return header + "\n" + text + "\n" + company + ". Телефон: " + phone;
     }
 }

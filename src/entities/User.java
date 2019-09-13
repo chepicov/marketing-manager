@@ -1,34 +1,31 @@
 package entities;
 
 public class User {
-    private String firstName;
-    private String lastName;
+    private String name;
     private String userName;
     private String password;
-    private String role;
+    private String phone;
     private String id;
 
     public User() {
     }
 
-    public User(String id, String firstName, String lastName, String userName, String password, String role) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String id, String name, String userName, String password, String phone) {
+        this.name = name;
         this.userName = userName;
         this.password = password;
-        this.role = role;
         this.id = id;
+        this.phone = phone;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id='" + id + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", name='" + name + '\'' +
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
-                ", role='" + role + '\'' +
+                ", phone='" + phone + '\'' +
                 '}';
     }
 
@@ -38,22 +35,6 @@ public class User {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getUserName() {
@@ -72,11 +53,19 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
+    public String getName() {
+        return name;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

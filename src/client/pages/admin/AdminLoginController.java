@@ -3,6 +3,7 @@ package client.pages.admin;
 import client.helpers.PageHelper;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -16,6 +17,9 @@ public class AdminLoginController {
 
     @FXML
     private URL location;
+
+    @FXML
+    private Label errorBlock;
 
     @FXML
     private Button backButton;
@@ -32,9 +36,16 @@ public class AdminLoginController {
     @FXML
     void initialize() {
         signinButton.setOnAction(event -> {
+            if (!loginInput.getCharacters().toString().equals("admin") || !passwordInput.getCharacters().toString().equals("admin")) {
+                errorBlock.setText("Неверный ввод.");
+                return;
+            }
             signinButton.getScene().getWindow().hide();
-            // signin
             PageHelper.onPageChange(getClass().getResource("ProductList.fxml"));
+        });
+        backButton.setOnAction(event -> {
+            backButton.getScene().getWindow().hide();
+            PageHelper.onPageChange(getClass().getResource("../Menu.fxml"));
         });
     }
 }

@@ -26,7 +26,7 @@
             <Image url="@assets/box.jpg" />
          </image>
       </ImageView>
-      <Text fx:id="descBlock" layoutX="337.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="desc" wrappingWidth="310.9999991953373">
+      <Text fx:id="descBlock" layoutX="337.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="desc" wrappingWidth="310.9999991953373">
          <font>
             <Font size="14.0" />
          </font>
@@ -42,5 +42,6 @@
             <Font size="32.0" />
          </font>
       </Label>
+      <Label fx:id="resultText" layoutX="337.0" layoutY="282.0" textFill="#00ff42" />
    </children>
 </AnchorPane>

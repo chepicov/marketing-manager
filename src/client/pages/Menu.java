@@ -3,6 +3,7 @@ package client.pages;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import client.Main;
 import client.helpers.PageHelper;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -26,6 +27,7 @@ public class Menu {
 
     @FXML
     void initialize() {
+        Main.setLogin("");
         searchLink.setOnAction(event -> {
             searchLink.getScene().getWindow().hide();
             PageHelper.onPageChange(getClass().getResource("search/Search.fxml"));

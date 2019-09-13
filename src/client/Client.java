@@ -44,7 +44,7 @@ public class Client
 
     public void close()
     {
-        sendMessage("quit|");
+        sendMessage("quit");
         try {
             coos.close();
             cois.close();
